@@ -51,7 +51,7 @@ template ConvertListToBinary(N,digits){
     }
     out<==tempOut;
 }
-//component main { public [ numbers ] } = SortedListH2L(4,8);
+component main { public [ numbers ] } = SortedListH2LArith(4);
 //component main { public [ numbers ] } = ConvertListToBinary(4,8);
 
 /* INPUT = {

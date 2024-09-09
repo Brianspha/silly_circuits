@@ -1,12 +1,11 @@
 pragma circom 2.1.6;
 
-include "circomlib/poseidon.circom";
 include "circomlib/comparators.circom";
 template IntergerDivision() {
     signal input a;
     signal input b;
     signal output c;
-    assert(b >1);
+    assert(b >1 && a>b);
     signal qoutient <-- a\b;
     signal remainder <-- a % b;
     qoutient * b + remainder ===a;
@@ -21,10 +20,6 @@ template IntergerDivision() {
     c<== qoutient;
 }
 
-component main { public [ a,b ] } = IntergerDivision();
+component main  = IntergerDivision();
 
 
-/* INPUT = {
-    "a": 10000,
-    "b":1
-} */
